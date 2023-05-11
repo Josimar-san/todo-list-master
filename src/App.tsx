@@ -3,13 +3,15 @@ import { useTheme, TextField, Grid, AppBar, Toolbar, Typography, Container, Butt
 import { ClipboardText, PlusCircle, Rocket } from "@phosphor-icons/react";
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
+import { ThemeContextProvider } from './Theme/ThemeContext';
+
 
 const CssTextField = styled(TextField)({
   '& label': {
-    color: '#ffffff38'
+    color: '#white'
   },
   '& label.Mui-focused': {
-    color: '#cfcfcf',
+    color: '#red',
   },
 
   '& .MuiOutlinedInput-root': {
@@ -17,11 +19,11 @@ const CssTextField = styled(TextField)({
       borderColor: 'black',
     },
     '&:hover fieldset': {
-      borderColor: '#cfcfcf',
+      borderColor: '#black',
       transition: '.4s',
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#cfcfcf',
+      borderColor: '#black',
     },
   },
 });
@@ -76,7 +78,7 @@ function App() {
                   backgroundColor: '#2b7aab',
                   transition: '.4s',
                 }
-              }}>Create <PlusCircle size={30} /></Button>
+              }}>Criar <PlusCircle size={30} /></Button>
             </Grid>
           </Grid>
         </Container>
@@ -106,8 +108,8 @@ function App() {
                 backgroundColor: '#121212'
               }}>
                 <ClipboardText size={80} color={colors.grey[600]} />
-                <Typography variant='h6' color={colors.grey[600]}>Você ainda não tem tarefas cadastradas</Typography>
-                <Typography variant='h6' color={colors.grey[600]}>Crie tarefas e organize seus itens a fazer</Typography>
+                <Typography variant='h6' color={colors.grey[600]}>Voce nao tem tarefas</Typography>
+                <Typography variant='h6' color={colors.grey[600]}>Criar tarefas e organize</Typography>
               </CardContent>
             </Card>
           </Grid>
